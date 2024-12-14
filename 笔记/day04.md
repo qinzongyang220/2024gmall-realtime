@@ -28,4 +28,28 @@
 就是吧数据发出去，吧他们当成一个只可读的共享数据，
 实现方法，
 拆分广播流：
-复制子任务：
+复制子任务
+——-------——————————————————————--------——————————————————
+
+
+在推进dim层进度时实现HBASE中自动建表时我的服务器的hbase在集群启动时出现无$JavaHONE这种报错：
+[root@hadoop102 hbase]# bin/start-hbase.sh
+running master, logging to /opt/module/hbase/logs/hbase-root-master-hadoop102.out
+hadoop102: +======================================================================+
+hadoop102: |                    Error: JAVA_HOME is not set                       |
+hadoop102: +----------------------------------------------------------------------+
+hadoop102: | Please download the latest Sun JDK from the Sun Java web site        |
+hadoop102: |     > http://www.oracle.com/technetwork/java/javase/downloads        |
+hadoop102: |                                                                      |
+hadoop102: | HBase requires Java 1.8 or later.                                    |
+hadoop102: +======================================================================+
+从这个报错看起来很不正常，但是我们只需要看一句话就是 ：Error: JAVA_HOME is not set       
+通过这个就可以得到我们需要去给他配置 $JAVA_HOME 
+果然在HBase的conf 文件中修改hbase-env.sh 
+# The java implementation to use.  Java 1.8+ required.
+export JAVA_HOME=/opt/module/jdk1.8.0_212/
+
+=----=
+在处理完报错后我继续完成dim层的搭建，发现在执行项目时，没有报错，我的hbase也有表，但是表中没有数据，于是开始排查，
+首先是看的hbase读取mysql的配置的地放，结果，确实是，在我的mysql中的表名字是叫gmall2024-realtime ,但是我的配置里写的是gmall,
+这是一个小错误，但是我们经常因为一些小错误导致我们的数据出现问题
