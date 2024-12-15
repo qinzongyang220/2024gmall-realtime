@@ -59,6 +59,10 @@ public class DwdBaseLog extends BaseApp {
         displayOut.sinkTo(FlinkSinkUtil.getKafkaSink(Constant.TOPIC_DWD_TRAFFIC_DISPLAY));
         actionOut.sinkTo(FlinkSinkUtil.getKafkaSink(Constant.TOPIC_DWD_TRAFFIC_ACTION));
         processStream.sinkTo(FlinkSinkUtil.getKafkaSink(Constant.TOPIC_DWD_TRAFFIC_PAGE));
+//        errOut.print();
+//        startOut.print();
+//        displayOut.print();
+//        actionOut.print();
 
     }
 

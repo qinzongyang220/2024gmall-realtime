@@ -62,7 +62,7 @@ public class DwdTradeCartAdd extends BaseSqlApp {
                 " `data`['order_time'] order_time," +
                 "  ts " +
                 " from topic_db " +
-                " where `database`='gmall' " +
+                " where `database`='gmall2024-realtime' " +
                 " and `table`='cart_info' " +
                 " and (`type` in ('bootstrap-insert','insert') or (`type`='update' and `old`['sku_num'] is not null " +
                 " and cast(`data`['sku_num'] as bigint) > cast(`old`['sku_num'] as bigint) ) ) ");

@@ -29,7 +29,7 @@ public class DwdProcessFunction extends BroadcastProcessFunction<JSONObject, Tab
     public void open(Configuration parameters) throws Exception {
         // 手动读取配置表
         Connection mysqlConnection = JdbcUtil.getMysqlConnection();
-        List<TableProcessDwd> tableProcessDwds = JdbcUtil.queryList(mysqlConnection, "select * from gmall2023_config.table_process_dwd", TableProcessDwd.class, true);
+        List<TableProcessDwd> tableProcessDwds = JdbcUtil.queryList(mysqlConnection, "select * from gmall2024_config.table_process_dwd", TableProcessDwd.class, true);
         for (TableProcessDwd tableProcessDwd : tableProcessDwds) {
             String type = tableProcessDwd.getSourceType();
             if ("bootstrap-insert".equals(type)){

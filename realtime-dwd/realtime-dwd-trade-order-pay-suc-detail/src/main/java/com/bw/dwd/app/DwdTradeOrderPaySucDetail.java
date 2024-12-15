@@ -120,7 +120,7 @@ public class DwdTradeOrderPaySucDetail extends BaseSqlApp {
                 "  row_time,   " +
                 "  proc_time   " +
                 " from topic_db " +
-                " where `database` = 'gmall'   " +
+                " where `database` = 'gmall2024-realtime'   " +
                 " and `table` = 'payment_info'     " +
                 " and ((`type`='bootstrap-insert' and `data`['payment_status'] = '1602' ) " +
                 " or (`type` = 'update' and `old`['payment_status'] is not null " +

@@ -86,7 +86,7 @@ public class DwdTtradeOrderCancelDetai extends BaseSqlApp {
                 " `data`['operate_time'] operate_time, " +
                 " ts " +
                 " from topic_db " +
-                " where `database`='gmall'\n" +
+                " where `database`='gmall2024-realtime'\n" +
                 " and `table`='order_info'\n" +
                 " and ( (`type` in ('bootstrap-insert','insert') and `data`['order_status'] = '1003' )  or " +
                 " (`type`='update' and `old`['order_status'] = '1001' and `data`['order_status'] = '1003' ))" );

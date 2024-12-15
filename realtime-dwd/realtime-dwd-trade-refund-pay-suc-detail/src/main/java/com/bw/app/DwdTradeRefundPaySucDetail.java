@@ -85,7 +85,7 @@ public class DwdTradeRefundPaySucDetail extends BaseSqlApp {
                         " data['user_id'] user_id," +
                         " data['province_id'] province_id " +
                         " from topic_db " +
-                        " where `database`='gmall' " +
+                        " where `database`='gmall2024-realtime' " +
                         " and `table`='order_info' " +
                         " and ((`type` = 'bootstrap-insert' and `data`['order_status']='1006' )" +
                         " or ( `type`='update' and `old`['order_status'] is not null and `data`['order_status']='1006' ) )");
@@ -102,7 +102,7 @@ public class DwdTradeRefundPaySucDetail extends BaseSqlApp {
                         " data['sku_id'] sku_id," +
                         " data['refund_num'] refund_num " +
                         " from topic_db " +
-                        " where `database`='gmall' " +
+                        " where `database`='gmall2024-realtime' " +
                         " and `table`='order_refund_info' " +
                         " and ((`type` = 'bootstrap-insert' and `data`['refund_status']='0705' )" +
                         " or ( `type`='update' and `old`['refund_status'] is not null and `data`['refund_status']='0705' ) )");
@@ -123,7 +123,7 @@ public class DwdTradeRefundPaySucDetail extends BaseSqlApp {
                 " proc_time, " +
                 " ts " +
                 " from topic_db " +
-                " where `database`='gmall' " +
+                " where `database`='gmall2024-realtime' " +
                 " and `table`='refund_payment' " +
                 " and ((`type` = 'bootstrap-insert' and `data`['refund_status']='1602' )" +
                 " or ( `type`='update' and `old`['refund_status'] is not null and `data`['refund_status']='1602' ) )");

@@ -42,6 +42,7 @@ public class DwdBaseDb extends BaseApp {
         //过滤字段
         SingleOutputStreamOperator<Tuple2<JSONObject, TableProcessDwd>> filterStream = getFilterStream(processStream);
         filterStream.sinkTo(FlinkSinkUtil.getDwdKafkaSink());
+//        filterStream.print();
     }
     private SingleOutputStreamOperator<Tuple2<JSONObject, TableProcessDwd>> getFilterStream(SingleOutputStreamOperator<Tuple2<JSONObject, TableProcessDwd>> processBroadStream) {
         SingleOutputStreamOperator<Tuple2<JSONObject, TableProcessDwd>> filterStream = processBroadStream.map(new MapFunction<Tuple2<JSONObject, TableProcessDwd>, Tuple2<JSONObject, TableProcessDwd>>() {

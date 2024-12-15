@@ -75,7 +75,7 @@ public class CommonApp extends BaseSqlApp {
                 " `data`['create_time'] create_time," +
                 " proc_time " +
                 " from topic_db " +
-                " where `database`='gmall' " +
+                " where `database`='gmall2024-realtime' " +
                 " and `table`='comment_info' " +
                 " and `type` in ('bootstrap-insert','insert') ");
     }

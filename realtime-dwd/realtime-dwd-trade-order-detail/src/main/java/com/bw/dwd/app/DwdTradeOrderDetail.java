@@ -97,7 +97,7 @@ public class DwdTradeOrderDetail extends BaseSqlApp {
                 "  `data`['order_detail_id'] id, \n" +
                 "  `data`['coupon_id'] coupon_id\n" +
                 "from topic_db\n" +
-                "where `database`='gmall'\n" +
+                "where `database`='gmall2024-realtime'\n" +
                 "and `table`='order_detail_coupon'\n" +
                 "and `type` in ('bootstrap-insert','insert')");
         tableEnv.createTemporaryView("order_detail_coupon", odcTable);
@@ -112,7 +112,7 @@ public class DwdTradeOrderDetail extends BaseSqlApp {
                 "  `data`['activity_id'] activity_id, \n" +
                 "  `data`['activity_rule_id'] activity_rule_id\n" +
                 "from topic_db\n" +
-                "where `database`='gmall'\n" +
+                "where `database`='gmall2024-realtime'\n" +
                 "and `table`='order_detail_activity'\n" +
                 "and `type` in ('bootstrap-insert','insert')");
         tableEnv.createTemporaryView("order_detail_activity", odaTable);
@@ -128,7 +128,7 @@ public class DwdTradeOrderDetail extends BaseSqlApp {
                 "  `data`['user_id'] user_id, \n" +
                 "  `data`['province_id'] province_id \n" +
                 "from topic_db\n" +
-                "where `database`='gmall'\n" +
+                "where `database`='gmall2024-realtime'\n" +
                 "and `table`='order_info'\n" +
                 "and `type` in ('bootstrap-insert','insert')");
         tableEnv.createTemporaryView("order_info", oiTable);
@@ -151,7 +151,7 @@ public class DwdTradeOrderDetail extends BaseSqlApp {
                 "  `data`['split_coupon_amount'] split_coupon_amount, \n" +
                 "  ts\n" +
                 "from topic_db\n" +
-                "where `database`='gmall'\n" +
+                "where `database`='gmall2024-realtime'\n" +
                 "and `table`='order_detail'\n" +
                 "and `type` in ('bootstrap-insert','insert')");
         tableEnv.createTemporaryView("order_detail_info", odTable);
