@@ -44,7 +44,9 @@ public class DwsTradePaymentSucWindow extends BaseApp {
         //添加水位线 开窗聚合
         SingleOutputStreamOperator<TradePaymentBean> reduceStream = getReduceStream(processStream);
         //写入Doris
-        reduceStream.map(new DorisMapFunction<>()).sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_PAYMENT_SUC_WINDOW));
+//        reduceStream.map(new DorisMapFunction<>()).sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_PAYMENT_SUC_WINDOW));
+        reduceStream.print();
+
     }
 
     /**

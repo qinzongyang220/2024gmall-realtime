@@ -11,6 +11,7 @@ public class DwdTradeOrderPaySucDetail extends BaseSqlApp {
     public static void main(String[] args) {
         new DwdTradeOrderPaySucDetail().start(10016,4, Constant.TOPIC_DWD_TRADE_ORDER_PAYMENT_SUCCESS);
     }
+
     @Override
     public void handle(StreamExecutionEnvironment env, StreamTableEnvironment tableEnv, String groupId) {
         //读取ods层
