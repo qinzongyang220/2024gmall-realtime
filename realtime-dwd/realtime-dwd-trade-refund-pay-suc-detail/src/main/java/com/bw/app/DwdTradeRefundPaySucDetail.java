@@ -28,6 +28,7 @@ public class DwdTradeRefundPaySucDetail extends BaseSqlApp {
         //写入kafka
         extracted3(tableEnv);
         table.insertInto(Constant.TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS).execute();
+
     }
 
     private static void extracted3(StreamTableEnvironment tableEnv) {
