@@ -6,6 +6,7 @@ import com.bw.base.BaseApp;
 import com.bw.bean.ShopBean;
 import com.bw.common.Constant;
 import com.bw.functions.Async;
+import com.bw.functions.MySink;
 import com.bw.utils.DateFormatUtil;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;

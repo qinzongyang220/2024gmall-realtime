@@ -44,6 +44,7 @@ public class DwsTradeCartAddUuWindow extends BaseApp {
         //开窗聚合
         SingleOutputStreamOperator<CartAddUuBean> reduceStream = getReduceStream(processStream);
         //写入doris
+//        reduceStream.map(new DorisMapFunction<>()).print();
         reduceStream.map(new DorisMapFunction<>()).sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_CART_ADD_UU_WINDOW));
     }
 

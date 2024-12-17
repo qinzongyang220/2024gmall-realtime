@@ -28,17 +28,17 @@ public abstract class BaseSqlApp {
         //创建流式Sql环境
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
         //设置并行度
-//        env.setParallelism(p);
+        env.setParallelism(p);
 //        设置CK
-//        env.setStateBackend(new HashMapStateBackend());
-//        env.enableCheckpointing(5000);
-//        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
-//        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/gmall2023/stream/"+groupId );
-//        env.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
-//        env.getCheckpointConfig().setMinPauseBetweenCheckpoints(5000);
-//        env.getCheckpointConfig().setCheckpointTimeout(10000);
-//        env.getCheckpointConfig().setExternalizedCheckpointCleanup(RETAIN_ON_CANCELLATION);
-        //设置ck状态为后端
+        env.setStateBackend(new HashMapStateBackend());
+        env.enableCheckpointing(5000);
+        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
+        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:9000/gmall2023/stream/"+groupId );
+        env.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
+        env.getCheckpointConfig().setMinPauseBetweenCheckpoints(5000);
+        env.getCheckpointConfig().setCheckpointTimeout(10000);
+        env.getCheckpointConfig().setExternalizedCheckpointCleanup(RETAIN_ON_CANCELLATION);
+//        //设置ck状态为后端
 //        env.setStateBackend(new HashMapStateBackend());
 //        //设置ck执行时间间隔            毫秒
 //        env.enableCheckpointing(5000);
@@ -51,7 +51,7 @@ public abstract class BaseSqlApp {
 //        //设置ck并发数
 //        env.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
 //        //设置ck路径
-//        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/gmall2023/stream/"+groupId);
+//        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:9000/gmall2023/stream/"+groupId);
 //        //job取消时 ck保留策略
 //        env.getCheckpointConfig().setExternalizedCheckpointCleanup(RETAIN_ON_CANCELLATION);
         //调用工具类消费数据

@@ -29,6 +29,7 @@ public class DwdTradeOrderPaySucDetail extends BaseSqlApp {
         //写入kafka
         extracted2(tableEnv);
         table.insertInto(Constant.TOPIC_DWD_TRADE_ORDER_PAYMENT_SUCCESS).execute();
+//        select * from ???
     }
 
     private static void extracted2(StreamTableEnvironment tableEnv) {

@@ -42,7 +42,7 @@ public class DwsUserUserRegisterWindow extends BaseApp {
     }
 
     /**
-     * 添加水位线并进行开窗聚合 补充实体类
+     * 添加水位线并进行开窗聚合 补充实体类 2
      * @param etlStream
      * @return
      */
