@@ -9,7 +9,7 @@ public class FlkNcTest {
     public static void main(String[] args) {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        DataStreamSource<String> streamSource = env.socketTextStream("hadoop102", 8989);
+        DataStreamSource<String> streamSource = env.socketTextStream("cdh01", 8989);
         streamSource.print();
         env.execute();
     }
